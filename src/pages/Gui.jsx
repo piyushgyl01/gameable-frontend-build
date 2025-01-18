@@ -69,13 +69,16 @@ export default function Gui() {
   const handleUpdate = async () => {
     try {
       // 1) Perform your PUT request
-      await fetch(`https://gameable-backend.vercel.app/quests/${editQuest._id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(editQuest),
-      });
+      await fetch(
+        `https://gameable-backend.vercel.app/quests/${editQuest._id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(editQuest),
+        }
+      );
 
       // 2) Update local UI
       setEditQuest(null);
